@@ -2839,7 +2839,7 @@ function scr_84_debug(arg0)
     {
         draw_set_font(fnt_main)
         draw_set_colour(c_white)
-        var chemg_x = 635 - string_width(chemg_room_name)
+        var chemg_x = global.widescreen_width - 5 - string_width(chemg_room_name)
         var chemg_y = 5
         scr_84_draw_text_outline(chemg_x, chemg_y, chemg_room_name)
         draw_set_font(fnt_small)
@@ -2871,6 +2871,9 @@ function scr_84_debug(arg0)
             scr_84_draw_text_outline(chemg_x, chemg_y + 16 + (8 * _counter), "FPS: " + string(fps))
             _counter++
         }*/
+        global._debugplus_chemg_x = chemg_x;
+        global._debugplus_chemg_y = chemg_y;
+        global._debugplus_counter = _counter;
     }
     if (global.chemg_menu_depth > 0)
     {
