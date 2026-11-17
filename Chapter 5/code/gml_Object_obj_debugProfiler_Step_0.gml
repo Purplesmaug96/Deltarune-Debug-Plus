@@ -46,7 +46,7 @@ if (keyboard_check(vk_shift) && keyboard_check(vk_control) && keyboard_check_pre
 }
 
 
-if global.chemg_display_flag_changes == 1 || global.chemg_flag_detection == 1
+if /*global.chemg_display_flag_changes == 1 || global.chemg_flag_detection == 1*/ true
 {
     var i = array_length_1d(global.flag) - 1
     while (i > -1)
@@ -54,10 +54,13 @@ if global.chemg_display_flag_changes == 1 || global.chemg_flag_detection == 1
         if (lastval[i] != global.flag[i]) && i != 0 && i != 33 && i != 21 // exclude flag 0, 33, 21 (they change a tong in quick succession and cover a bunch of the screen)
         {
             var _msg = "global.flag[" + string(i) + "] (" + scr_flag_name_get(i) + ") has been changed from " + string(lastval[i]) + " to " + string(global.flag[i])
-            
+            if (i == 24 && instance_exists(obj_darkcontroller)) {
+                obj_darkcontroller.reloadconfigmenu();
+            }
+
             for (var j = maxFlags - 1; j > -1; j --)
                 flagSetArray[j + 1] = flagSetArray[j]
-                
+
             flagSetArray[0] = _msg
             if global.chemg_display_flag_changes == 1
                 scr_debug_print(_msg)
