@@ -31,8 +31,8 @@ if (battlemode == 1)
 	becamebattle = 1
 	if (battlealpha < 0.8)
 		battlealpha += 0.04
-	global.heartx = (x + 12) - __view_get(e__VW.XView, 0)
-	global.hearty = (y + 40) - __view_get(e__VW.YView, 0)
+	global.heartx = (x + 12) - camerax()
+	global.hearty = (y + 40) - cameray()
 }
 else if (battlealpha > 0)
 {
@@ -68,24 +68,3 @@ if (battlemode == 4)
 }
 if (scr_debug())
 	draw_set_color(c_red)
-
-enum e__VW
-{
-	XView,
-	YView,
-	WView,
-	HView,
-	Angle,
-	HBorder,
-	VBorder,
-	HSpeed,
-	VSpeed,
-	Object,
-	Visible,
-	XPort,
-	YPort,
-	WPort,
-	HPort,
-	Camera,
-	SurfaceID
-}
