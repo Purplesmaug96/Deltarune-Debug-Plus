@@ -15,7 +15,7 @@ global.mnfight = 2
 global.turntimer = 200
 timer = 0
 go = 0
-instance_create(__view_get(e__VW.XView, 0) + 320, __view_get(e__VW.YView, 0) + 170, obj_growtangle)
+instance_create(camerax() + 320, cameray() + 170, obj_growtangle)
 instance_create(obj_growtangle.x - 6, obj_growtangle.y - 8, obj_heart)
 if (global.tempflag[26] == 1)
 {

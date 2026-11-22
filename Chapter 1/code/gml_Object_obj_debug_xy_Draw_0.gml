@@ -152,8 +152,9 @@ if (show_all_object_xy == 1)
                 foy = findo.y
                 if (xy_camera_relative == 1)
                 {
-                    fox -= __view_get(e__VW.XView, 0)
-                    foy -= __view_get(e__VW.YView, 0)
+                    // TODO: Is this correct
+                    fox -= raw_camerax()
+                    foy -= raw_cameray()
                 }
                 if (xy_camera_relative == 2)
                 {
@@ -188,8 +189,8 @@ if (show_all_object_xy == 1)
     foy = y
     if (xy_camera_relative == 1)
     {
-        fox -= __view_get(e__VW.XView, 0)
-        foy -= __view_get(e__VW.YView, 0)
+        fox -= raw_camerax()
+        foy -= raw_cameray()
     }
     if (xy_camera_relative == 2)
     {

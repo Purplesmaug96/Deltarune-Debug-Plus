@@ -14,7 +14,7 @@ if (global.mnfight != 2)
         global.mnfight = 2
         global.myfight = -1
         if (!instance_exists(obj_growtangle))
-            instance_create(__view_get(e__VW.XView, 0) + 320, __view_get(e__VW.YView, 0) + 170, obj_growtangle)
+            instance_create(camerax() + 320, cameray() + 170, obj_growtangle)
         if (!instance_exists(obj_heart))
             scr_moveheart()
         for (i = 1; i < 4; i++)
