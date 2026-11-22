@@ -41,24 +41,3 @@ enem2 = 0
 enem3 = 0
 neverendingturn = 0
 drawdebug = true
-
-enum e__VW
-{
-    XView,
-    YView,
-    WView,
-    HView,
-    Angle,
-    HBorder,
-    VBorder,
-    HSpeed,
-    VSpeed,
-    Object,
-    Visible,
-    XPort,
-    YPort,
-    WPort,
-    HPort,
-    Camera,
-    SurfaceID
-}
